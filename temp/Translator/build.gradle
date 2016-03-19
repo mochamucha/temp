@@ -1,0 +1,37 @@
+apply plugin: 'java'
+apply plugin: 'war'
+
+
+war {
+    archiveName 'myapp.war'
+}
+
+
+repositories {
+    mavenCentral()
+	maven {
+        url "http://repo.spring.io/list/plugins-release/"
+    }
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    compile 'com.ibm.watson.developer_cloud:java-wrapper:1.1.0'
+	compile 'org.glassfish.main.core:glassfish:4.1.1'
+	compile 'javax.servlet:javax.servlet-api:4.0.0-b01'
+	compile 'org.apache.clerezza.ext:org.json.simple:0.4'
+	testCompile 'junit:junit:4.12'
+	
+	
+	compile 'org.json:json:20160212'
+	compile 'com.googlecode.json-simple:json-simple:1.1','javax.servlet:servlet-api:3.0-alpha-1','cn.guoyukun.jdbc:db2jcc:1.4.2','org.eclipse.jetty.orbit:javax.servlet:3.0.0.v201112011016'
+
+	compile 'org.apache.clerezza.ext:org.json.simple:0.4'
+    compile group: 'com.squareup.okhttp', name: 'okhttp', version:'2.7.0'
+    compile group: 'com.google.code.gson', name: 'gson', version:'2.5'
+    compile group: 'org.apache.commons', name: 'commons-lang3', version:'3.4'
+	compile 'com.ibm.watson.developer_cloud:java-sdk:2.8.0'
+	testCompile 'junit:junit:4.12'
+}
